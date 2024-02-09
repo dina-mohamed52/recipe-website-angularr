@@ -1,0 +1,92 @@
+<ng-template appPlaceholder></ng-template>
+<div class="row">
+  <div class="col-xs-12 col-md-6 col-md-offset-3 relative">
+    <div *ngIf="isLoading" style="text-align: center;">
+      <app-loading-spinner></app-loading-spinner>
+    </div>
+    <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading"
+      class="formbg border text-gray-700 border-orange-500 bg-transparent  shadow-2xl shadow-gray-900 w-[48rem] h-[48rem] p-12 ml-[45rem]  mt-[2rem] rounded-2xl relative overflow-hidden">
+
+      <!-- Header -->
+      <h2 class="text-4xl text-gray-800 mb-8">Join Us 🍲🥕🥩</h2>
+
+      <!-- SVG at the top -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="absolute top-0 left-0 w-full z-10">
+        <defs>
+          <linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="10%">
+            <stop
+              offset="0%"
+              style="stop-color: #d81f6c; stop-opacity: 0.3"
+            />
+            <stop
+              offset="100%"
+              style="stop-color: #c2234a; stop-opacity: 0.8"
+            />
+          </linearGradient>
+        </defs>
+        <path
+          fill="url(#gradient)"
+          d="M0,256L48,240C96,224,192,192,288,181.3C384,171,480,181,576,186.7C672,192,768,192,864,181.3C960,171,1056,149,1152,133.3C1248,117,1344,107,1392,101.3L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+        ></path>
+      </svg>
+
+      <div class="form-group mt-[6rem] rounded-xl">
+        <label for="email">E-Mail</label>
+        <input
+          type="email"
+          id="email"
+          class="form-control bg-gray-800 text-pink-200 border-pink-500 hover:border-pink-400"
+          ngModel
+          name="email"
+          required
+          email
+        />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          class="form-control bg-gray-800 text-pink-200 border-pink-500 hover:border-pink-400"
+          ngModel
+          name="password"
+          required
+          minlength="6"
+        />
+      </div>
+      <div class="mt-4 flex flex-col items-center">
+        <button
+          class="bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-pink-500 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out relative z-20"
+          type="submit"
+          [disabled]="!authForm.valid"
+        >
+          {{ isLoginMode ? 'Login' : 'Sign Up' }}
+        </button>
+        <button class="mt-2 bg-transparent text-gray-700 font-semibold py-2 px-4 border border-pink-700 rounded-lg transition duration-300 ease-in-out relative z-20" (click)="onSwitchMode()" type="button">
+          Switch to {{ isLoginMode ? 'Sign Up' : 'Login' }}
+        </button>
+      </div>
+
+      <!-- SVG at the bottom -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="absolute bottom-0 left-0 w-full transform rotate-180 z-10">
+        <defs>
+          <linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="10%">
+            <stop
+              offset="0%"
+              style="stop-color: #e70e57; stop-opacity: 1"
+            />
+            <stop
+              offset="100%"
+              style="stop-color: #ec9fd9; stop-opacity: 1"
+            />
+          </linearGradient>
+        </defs>
+        <path
+          fill="url(#gradient)"
+          d="M0,256L48,240C96,224,192,192,288,181.3C384,171,480,181,576,186.7C672,192,768,192,864,181.3C960,171,1056,149,1152,133.3C1248,117,1344,107,1392,101.3L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+        ></path>
+      </svg>
+
+    </form>
+  </div>
+</div>

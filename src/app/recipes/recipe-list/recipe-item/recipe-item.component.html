@@ -1,0 +1,14 @@
+<a
+  [routerLink]="[index]"
+  routerLinkActive="active"
+  class="block bg-transparent border w-[27rem] ml-4 border-gray-300 rounded-md shadow-md hover:shadow-lg overflow-hidden transition duration-300 ease-in-out"
+  style="cursor: pointer;">
+  <div class="p-4">
+    <h4 class="text-lg font-semibold text-gray-800">{{ recipe.name }}</h4>
+    <p class="text-gray-600">{{ recipe.description }}</p>
+  </div>
+  <img
+    [src]="recipe.imagePath"
+    alt="{{ recipe.name }}"
+    class="w-full h-auto">
+</a>

@@ -1,0 +1,16 @@
+<div class="container  bg-gray-100 border border-pink-400 mx-auto">
+  <!-- New Recipe Button -->
+  <div class="flex justify-center mt-8">
+    <button class="bg-pink-800 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out" (click)="onNewRecipe()">New Recipe</button>
+  </div>
+
+  <!-- Horizontal Divider -->
+  <hr class="my-8 border-b border-gray-300">
+
+  <!-- Recipe Items -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+    <div class="col-span-1" *ngFor="let recipeEl of recipes; let i = index">
+      <app-recipe-item [recipe]="recipeEl" [index]="i"></app-recipe-item>
+    </div>
+  </div>
+</div>

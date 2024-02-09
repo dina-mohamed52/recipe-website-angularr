@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  background-image: url('./assets/2.jpg');
+  background-size: cover; /* Ensures the background image covers the entire viewport */
+  background-position: center; /* Centers the background image */
+  width: 100%;
+  height: 100vh;
+  margin: 0; /* Removes default body margin */
+
+}
+.formbg{
+   background-image: url('./assets/logo.jpg');
+  background-size:auto;
+  /* width: 90%; */
+  /* height: 90%;/ */
+
+
+}
+
+.color{
+  background-image: url('./assets/6.jpg');
+  background-size: cover;
+}
+.navbar.rounded-lg:hover,
+.navbar.rounded-lg:focus {
+  border: 2px solid pink;
+}
+.nav>li>a{
+
+  border-radius: 3.5rem;
+  border: rgb(146, 14, 36) !important;
+
+}
+.header{
+  background-image: url('./assets/logo.jpg');
+  background-size: auto;
+  border-radius: 2.5rem;
+}
